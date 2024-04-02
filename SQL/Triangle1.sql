@@ -7,6 +7,7 @@
 *
 Write a query to print the pattern P(20). */
 
+/* MySQL */
 DELIMITER $$
 CREATE PROCEDURE Triangle(s INT)
 BEGIN
