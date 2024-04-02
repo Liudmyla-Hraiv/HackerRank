@@ -1,0 +1,20 @@
+/*P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5):
+
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+Write a query to print the pattern P(20). */
+
+DELIMITER $$
+CREATE PROCEDURE Triangle(s INT)
+BEGIN
+    WHILE s>0 DO
+    SELECT REPEAT('* ', s);
+    SET s = s - 1;
+    END WHILE;
+END;
+$$
+
+CALL Triangle(20)
