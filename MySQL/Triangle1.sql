@@ -19,11 +19,3 @@ END;
 $$
 
 CALL Triangle(20)
-    
-/* MS SQL */
-DECLARE @s INT = 20
-WHILE @s >0
-BEGIN
-PRINT REPLICATE('* ', @s)
-SET @s = @s - 1
-END
