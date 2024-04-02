@@ -1,1 +1,34 @@
+/* Write a query to print all prime numbers less than or equal to . Print your result on a single line, and use the ampersand () character as your separator (instead of a space). */
 
+/* MySQL */
+DELIMITER $$
+CREATE PROCEDURE Prime(IN n int, OUT result varchar(2000))
+BEGIN
+DECLARE j, i, flag int; 
+SET j=2;
+SET result='';
+
+WHILE(j<n) DO 
+    SET i=2;
+    SET flag=0;
+
+        WHILE(i<=j) DO 
+            IF(j%i=0)
+            THEN
+            SET Flag=Flag+1;
+            END IF;
+        SET i=i+1; 
+        END WHILE;
+
+    IF (flag=1) 
+    THEN
+        SET result=concat(result, j, '&');
+    END IF ;
+ SET j=j+1; 
+END WHILE;
+
+END
+$$
+
+CALL Prime(1000, @result);
+SELECT substr(@result, 1, length(@result)-1)
