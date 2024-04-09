@@ -13,9 +13,9 @@ STATION:
 | LONG_W         |
 +----------------+
 */
-SET @n=(SELECT COUNT(*) FROM STATION);
-SET @l =floor((@n+1)/2);
-SET @h=ceil((@n+1)/2);
+SET @n = (SELECT COUNT(*) FROM STATION);
+SET @l = floor((@n+1)/2);
+SET @h = ceil((@n+1)/2);
 WITH sort AS (
     SELECT LAT_N, 
     ROW_NUMBER() OVER (ORDER BY LAT_N asc) AS num
